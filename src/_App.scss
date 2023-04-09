@@ -1,0 +1,20 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #e7e7e7;
+  font-family: monospace;
+}
+img{
+  max-width: 100%;
+}
+button{
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+@import "./style/SearchForm.scss"
