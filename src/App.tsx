@@ -2,22 +2,24 @@ import { MagnifyingGlass } from "@phosphor-icons/react";
 import "./_App.scss";
 import Header from "./Components/Header/Header";
 import { useEffect, useState } from "react";
-import json from "./assets/json/data.json"
+import Card from "./Components/Card/Card";
+
+
+
 
 
 const App = () => {
   const [data, setData] = useState()
   useEffect(()=>{
     const countriesApi = async ()=>{
-      const response = await fetch('./assets/json/data.json')
+      const response = await fetch("./assets/json/countries.json")
       const apiData = await response.json()
-      console.log(apiData)
       setData(apiData)
     }
     countriesApi();
   }, [])
+  console.log(data)
 
-console.log(data)
   return (
     <div>
       <Header />
@@ -46,7 +48,13 @@ console.log(data)
       </section>
 
       <main className="countries-card">
-
+        <Card 
+        namePais="Afghanistan"
+        population={213213}
+        region="Asia"
+        capital="Kabul"
+        />
+        
       </main>
     </div>
   );

@@ -1,0 +1,40 @@
+@mixin flex($colunas: initial, $position, $gap: 0){
+  display: flex;
+  flex-direction: $colunas;
+  align-items: $position;
+  gap: $gap;
+  
+}
+.card{
+  max-width: 350px;
+  @include flex(column, start );
+  background: #ffffff;
+  border-radius:5px;
+
+  .card__bandeira{
+    max-width: 100%;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .card__info{
+    padding: 2rem 2rem 3rem 2rem;
+    @include flex(column, start );
+    gap: 1.5rem;
+
+    .card__info-title{
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .card__info-outhers{
+      @include flex(column, start, 0.7rem);
+
+      strong{
+        font-size: 1.1rem;
+      }
+
+      font-size: 1rem;
+
+    }
+  }
+}

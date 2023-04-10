@@ -1,20 +1,36 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   background: #e7e7e7;
-  font-family: monospace;
+  min-height: 100vh;
 }
-img{
+body, input, select, option button{
+  font-family: Nunito Sans;
+}
+img {
   max-width: 100%;
 }
-button{
+button {
   background: transparent;
   border: 0;
   cursor: pointer;
 }
+ul {
+  list-style: none;
+}
 
-@import "./style/SearchForm.scss"
+.countries-card {
+  max-width: 1700px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+@import "./style/SearchForm.scss";
