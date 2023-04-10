@@ -1,7 +1,7 @@
 import "./Card.scss"
 
 interface Card{
-  bandeiraUrl?: string | number
+  bandeiraUrl?: undefined
   namePais:string,
   population: number,
   region: string,
@@ -12,9 +12,9 @@ interface Card{
 const Card = ({bandeiraUrl, namePais, population, region, capital }: Card) => {
   return (
     <>
-      <div className="card">
+      <a href={`#${namePais}`} className="card">
         <figure>
-          <img className="card__bandeira" src={`https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg`} alt=""  width={500}/>
+          <img className="card__bandeira" src={bandeiraUrl} alt=""  width={500}/>
         </figure>
         <div className="card__info">
           <h2 className="card__info-title">{namePais}</h2>
@@ -25,7 +25,7 @@ const Card = ({bandeiraUrl, namePais, population, region, capital }: Card) => {
             <li><strong>Capital:</strong>  {capital}</li>
           </ul>
         </div>
-      </div>
+      </a>
     </>
   )
 }
