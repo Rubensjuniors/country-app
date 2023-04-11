@@ -1,10 +1,10 @@
 
 
-const CampInput = ({updateData}) => {
+const CampInput = ({updateData}: any) => {
 
   
-  const typingContry = (event)=>{
-    const nameContry = event.target.value
+  const typingContry = ({target}: any)=>{
+    const nameContry = target.value
     if(nameContry){
       updateData(`https://restcountries.com/v3.1/name/${nameContry}`)
     }else{

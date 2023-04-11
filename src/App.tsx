@@ -10,7 +10,7 @@ const App = () => {
   const [data, setData] = useState([]);
   const [updateData, setUpdateData] = useState(null);
 
-  const countriesApi = async (url) => {
+  const countriesApi = async (url: any) => {
     const response = await fetch(url);
     const apiData = await response.json();
     setData(apiData);

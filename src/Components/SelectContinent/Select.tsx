@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Select.scss";
 
-const Select = ({updateData}) => {
+const Select = ({updateData}: any) => {
   const Region = [
     'all',
     'Africa',
@@ -15,7 +15,7 @@ const Select = ({updateData}) => {
 
   
 
-  const selectRegion = ({target})=> {
+  const selectRegion = ({target}: any)=> {
     const regionText = target.innerText
     if(regionText === 'all'){
       updateData(`https://restcountries.com/v3.1/all`)
