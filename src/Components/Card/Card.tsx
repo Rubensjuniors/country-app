@@ -12,7 +12,7 @@ interface Card{
 const Card = ({bandeiraUrl, namePais, population, region, capital }: Card) => {
   return (
     <>
-      <a href={`#${namePais}`} className="card">
+      <a href={namePais} className="card">
         <figure>
           <img className="card__bandeira" src={bandeiraUrl} alt=""  width={500}/>
         </figure>

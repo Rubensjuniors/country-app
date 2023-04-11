@@ -1,21 +1,24 @@
-import { MagnifyingGlass } from "@phosphor-icons/react";
 import "./_App.scss";
-import Header from "./Components/Header/Header";
 import { useEffect, useState } from "react";
+import { MagnifyingGlass } from "@phosphor-icons/react";
+import Header from "./Components/Header/Header";
 import Card from "./Components/Card/Card";
 import Select from "./Components/SelectContinent/Select";
+import CampInput from "./Components/Input/CampInput";
 
 const App = () => {
   const [data, setData] = useState([]);
+  const [updateData, setUpdateData] = useState(null);
+
+  const countriesApi = async (url) => {
+    const response = await fetch(url);
+    const apiData = await response.json();
+    setData(apiData);
+  };
 
   useEffect(() => {
-    const countriesApi = async () => {
-      const response = await fetch(`https://restcountries.com/v3.1/all`);
-      const apiData = await response.json();
-      setData(apiData);
-    };
-    countriesApi();
-  }, []);
+    countriesApi(updateData || `https://restcountries.com/v3.1/all`);
+  }, [updateData]);
   
   return (
     <div>
@@ -25,16 +28,11 @@ const App = () => {
         <form className="form_search">
           <label htmlFor="search__input">
             <MagnifyingGlass />
-            <input
-              autoComplete="off"
-              placeholder="Search for a country..."
-              id="search"
-              type="text"
-            />
+            <CampInput  updateData={setUpdateData}/>
           </label>
         </form>
 
-        <Select />
+        <Select updateData={setUpdateData}/>
       </section>
 
       <main className="countries-card">

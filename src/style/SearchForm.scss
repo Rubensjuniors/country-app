@@ -33,5 +33,14 @@
     }
   }
 
-  
+
+}
+@media (min-width: 720px){
+  .search_contry {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .form_search {
+    flex: 1;
+  }
 }
