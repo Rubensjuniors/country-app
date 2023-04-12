@@ -1,7 +1,9 @@
+import { useState } from "react"
 import "./Card.scss"
+import { Link } from "react-router-dom"
 
 interface Card{
-  bandeiraUrl?: undefined
+  bandeiraUrl: string
   namePais:string,
   population: number,
   region: string,
@@ -10,9 +12,12 @@ interface Card{
 }
 
 const Card = ({bandeiraUrl, namePais, population, region, capital }: Card) => {
+
+
+
   return (
     <>
-      <a href={namePais} className="card">
+      <Link to={`/${namePais}`} className="card">
         <figure>
           <img className="card__bandeira" src={bandeiraUrl} alt=""  width={500}/>
         </figure>
@@ -25,7 +30,9 @@ const Card = ({bandeiraUrl, namePais, population, region, capital }: Card) => {
             <li><strong>Capital:</strong>  {capital}</li>
           </ul>
         </div>
-      </a>
+      </Link>
+
+      
     </>
   )
 }

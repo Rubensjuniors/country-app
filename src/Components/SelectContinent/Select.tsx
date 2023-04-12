@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { HTMLProps, useState } from "react";
 import "./Select.scss";
 
-const Select = ({updateData}: any) => {
+const Select = ({updateData}:  { updateData: (url: string) => void } & HTMLProps<HTMLInputElement>) => {
   const Region = [
     'all',
     'Africa',
@@ -11,7 +11,7 @@ const Select = ({updateData}: any) => {
     'Oceania'
   ]
   const [select, setSelect] = useState(false);
-  const [region, setRegion] = useState(null)
+  const [region, setRegion] = useState("")
 
   
 

@@ -1,10 +1,11 @@
+import {ChangeEvent, HTMLProps } from "react"
 
 
-const CampInput = ({updateData}: any) => {
+const CampInput = ({updateData}:  { updateData: (url: string) => void } & HTMLProps<HTMLInputElement>) => {
 
   
-  const typingContry = ({target}: any)=>{
-    const nameContry = target.value
+  const typingContry = (event: ChangeEvent<HTMLInputElement>)=>{
+    const nameContry = event.target.value
     if(nameContry){
       updateData(`https://restcountries.com/v3.1/name/${nameContry}`)
     }else{
