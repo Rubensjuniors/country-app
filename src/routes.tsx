@@ -1,10 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "./App";
+import App from "./layouts/App";
 import InfoCard from "./Page/CardInfo/InfoCard";
 import Home from "./Page/home/Home";
 import { useState } from "react";
-
-
 
 const router = createBrowserRouter([
   {
@@ -14,10 +12,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-      },
-      {
-        path: "/Barbados",
-        element: <InfoCard />,
       },
     ],
   },

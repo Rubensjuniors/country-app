@@ -23,15 +23,15 @@ const Home = () => {
   
   return (
     <>
-      <section className="search_contry">
-        <form className="form_search">
-          <label htmlFor="search__input">
+      <section className="search">
+        <form className="search__form">
+          <label className="search__form-input">
             <MagnifyingGlass />
-            <CampInput  updateData={setUpdateData}/>
+            <CampInput  setUpdateData={setUpdateData}/>
           </label>
         </form>
 
-        <Select updateData={setUpdateData}/>
+        <Select setUpdateData={setUpdateData}/>
       </section>
 
       <main className="countries-card">

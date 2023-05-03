@@ -1,7 +1,11 @@
 import { HTMLProps, useState } from "react";
 import "./Select.scss";
 
-const Select = ({updateData}:  { updateData: (url: string) => void } & HTMLProps<HTMLInputElement>) => {
+interface selectProps extends HTMLProps<HTMLInputElement>{
+  setUpdateData: (url: string) => void 
+}
+
+const Select = ({setUpdateData}:  selectProps) => {
   const Region = [
     'all',
     'Africa',
@@ -18,9 +22,9 @@ const Select = ({updateData}:  { updateData: (url: string) => void } & HTMLProps
   const selectRegion = ({target}: any)=> {
     const regionText = target.innerText
     if(regionText === 'all'){
-      updateData(`https://restcountries.com/v3.1/all`)
+      setUpdateData(`https://restcountries.com/v3.1/all`)
     }else{
-      updateData(`https://restcountries.com/v3.1/region/${regionText}`)
+      setUpdateData(`https://restcountries.com/v3.1/region/${regionText}`)
     }
     setRegion(regionText)
     setSelect(!select)
