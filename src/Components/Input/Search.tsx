@@ -4,7 +4,7 @@ interface InputProps extends HTMLProps<HTMLInputElement> {
   setUpdateData: (url: string) => void;
 }
 
-const CampInput = ({ setUpdateData }: InputProps) => {
+const Search = ({ setUpdateData }: InputProps) => {
   const typingContry = (event: ChangeEvent<HTMLInputElement>) => {
     const nameContry = event.target.value;
     if (nameContry) {
@@ -27,4 +27,4 @@ const CampInput = ({ setUpdateData }: InputProps) => {
   );
 };
 
-export default CampInput;
+export default Search;

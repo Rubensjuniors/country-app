@@ -3,7 +3,6 @@
   flex-direction: $colunas;
   align-items: $position;
   gap: $gap;
-  
 }
 
 .card{
@@ -36,7 +35,7 @@
       font-weight: bold;
     }
 
-    .card__info-outhers{
+    .card__info-list{
       @include flex(column, start, 0.7rem);
 
       strong{

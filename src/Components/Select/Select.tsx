@@ -31,10 +31,10 @@ const Select = ({setUpdateData}:  selectProps) => {
   }
 
   return (
-    <div className="select__region">
+    <div className="select">
       <button className="select__button" onClick={()=> setSelect(!select)}>{region || 'Filter by Region'}</button>
       {select && (
-        <div className="list__region">
+        <div className="select__list-region">
           {Region.map(r => <button onClick={selectRegion}>{r}</button>)}
         </div>
       )}

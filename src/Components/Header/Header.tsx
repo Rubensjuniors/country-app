@@ -8,7 +8,7 @@ const Header = () => {
         <div className="header__container">
           <h1 className="header__logo">Where in the World?</h1>
 
-          <button className="darkMode">
+          <button className="header__thema">
             <Moon />
             <span>Dark Mode</span>
           </button>

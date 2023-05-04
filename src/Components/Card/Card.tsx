@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "./Card.scss"
 import { Link } from "react-router-dom"
 
@@ -7,24 +7,28 @@ interface Card{
   namePais:string,
   population: number,
   region: string,
-  capital: string
+  capital: string,
+  flag?: string,
+  path: string
+
 
 }
 
-const Card = ({bandeiraUrl, namePais, population, region, capital }: Card) => {
+const Card = ({bandeiraUrl, namePais, population, region, capital, flag, path }: Card) => {
 
 
+  
 
   return (
     <>
-      <Link to={`/${namePais}`} className="card">
+      <Link to={`/${path}`} className="card" onClick={()=> console.log(path)}>
         <figure>
-          <img className="card__bandeira" src={bandeiraUrl} alt=""  width={500}/>
+          <img className="card__bandeira" src={bandeiraUrl} alt={namePais}  width={500}/>
         </figure>
         <div className="card__info">
-          <h2 className="card__info-title">{namePais}</h2>
+          <h2 className="card__info-title">{namePais} {flag}</h2>
 
-          <ul className="card__info-outhers">
+          <ul className="card__info-list">
             <li><strong>Population:</strong> {population}</li>
             <li><strong>Region:</strong>  {region}</li>
             <li><strong>Capital:</strong>  {capital}</li>
