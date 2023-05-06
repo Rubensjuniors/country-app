@@ -1,0 +1,19 @@
+.button{
+  background: #ffffff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.3rem;
+  border-radius: 0.732rem;
+}
+
+.button-large{
+  padding: 1rem 2.5rem;
+}
+
+.button-small{
+  min-width: 80px;
+  padding: 1rem;
+}

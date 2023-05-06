@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+
 import "./Card.scss"
 import { Link } from "react-router-dom"
 
@@ -21,7 +21,7 @@ const Card = ({bandeiraUrl, namePais, population, region, capital, flag, path }:
 
   return (
     <>
-      <Link to={`/${path}`} className="card" onClick={()=> console.log(path)}>
+      <Link to={`/${path}`} className="card">
         <figure>
           <img className="card__bandeira" src={bandeiraUrl} alt={namePais}  width={500}/>
         </figure>
