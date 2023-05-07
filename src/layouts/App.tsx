@@ -4,6 +4,7 @@ import Home from "../Page/home/Home";
 import InfoCard from "../Page/CardInfo/InfoCard";
 
 
+
 const App = () => {
 
   
@@ -13,7 +14,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />}  />
-          <Route path="/:id" element={<InfoCard />} errorElement={<h1>Pais sem Informação</h1>}/>
+          <Route path="/:id" element={<InfoCard />}/>
         </Routes>
     </Router>
   );
