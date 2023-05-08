@@ -22,7 +22,7 @@ const Card = ({
 }: Card) => {
   return (
     <>
-      <Link to={`/${path}`}>
+      <Link to={`/${path}`} className="card">
         <figure>
           <img
             className="card__bandeira"
